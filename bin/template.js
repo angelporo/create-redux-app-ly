@@ -1,5 +1,5 @@
 const reducerJs = function(viewName) {
-    const reducerName = viewName + "Reducers";
+    const reducerName = viewName + "Reducer";
   return `
 /**
  * current page action and reducers;

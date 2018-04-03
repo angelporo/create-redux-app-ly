@@ -2,7 +2,6 @@
 
 const copyDir = require("./copyDir.js");
 const fs = require("fs");
-const getPackageJson = require("./package.js");
 const emoji = require("node-emoji");
 const childProcess = require("child_process");
 const jsonfile = require("jsonfile");

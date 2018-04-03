@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const fs = require("fs");
 const path = require("path");
 const emoji = require("node-emoji");
@@ -48,12 +46,6 @@ function newRouterView(pageName) {
           };
           const emojified = emoji.emojify(":heart:", onMissing);
           const warning = emoji.emojify(":warning:", onMissing);
-          console.log(
-            "\x1b[36m",
-            `
-              create page to current dir  ${emojified}
-              `,
-          );
 
           const templateJsString = viewjsTemplate(pageName);
 
@@ -63,11 +55,14 @@ function newRouterView(pageName) {
 
           const sep = path.sep;
           const folders = path.dirname(templateViewPath).split(sep);
+          /**
+           * 文件是否存在!
+           */
           if (fs.existsSync(folders[0])) {
             return console.log(
               "\x1b[33m",
               `
-                ${warning}  Create Views already exists
+                ${warning}  Create file already exists
                 `,
             );
           }
@@ -87,12 +82,19 @@ function newRouterView(pageName) {
            * @param {Type}  Value -  Note
            * @param {Type}  Value -  Note
            */
-          if (typeof indexTemplatejs == "function") {
+          if (typeof indexTemplatejs === "function") {
             const tempalteComponentTestPath = getWriteName(pageName)(
               `${"index"}.js`,
             );
             createDirAndWriteFile(tempalteComponentTestPath);
           }
+
+          console.log(
+            "\x1b[36m",
+            `
+              create page to current dir  ${emojified}
+              `,
+          );
 
           /**
            * 写入template内容
