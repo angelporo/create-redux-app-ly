@@ -39,9 +39,15 @@ cd myapp && npm start
 ├── scripts # 启动脚本和构建脚本
 │   ├── build.js
 │   ├── start.js
+├── server # 服务端构建
+│   ├── app.js
+│   ├── index.js
+│   ├── routes
+│   │   ├── api.js
+│   │   └── index.js
+│   └── universal.js
 │   └── test.js
 ├── src # 入口
-│   ├── app.js # 注入store和router的history
 │   ├── component # 组件
 │   │   ├── header
 │   │   │   ├── header.css
@@ -54,8 +60,6 @@ cd myapp && npm start
 │   │       ├── tempalte.css
 │   │       ├── tempalte.js
 │   │       └── tempalte.test.js
-│   ├── index.js # 项目入口文件
-│   ├── registerServiceWorker.js
 │   ├── router # 可用router component
 │   │   ├── home
 │   │   │   ├── home.css
@@ -69,6 +73,10 @@ cd myapp && npm start
 │   │       ├── type.js # type
 │   │       └── update.js # action和页面reducer
 │   └── store.js # 构建store
+│   ├── app.js # 注入store和router的history
+│   ├── index.js # 项目入口文件
+│   ├── registerServiceWorker.js
+
 └── test
 ```
 
@@ -82,5 +90,9 @@ cd myapp && npm start
 ```
 
 
-### 服务器渲染
-TODO: 
+### 服务器与客户端同构
+
+```
+npm run build
+npm run start:server
+```

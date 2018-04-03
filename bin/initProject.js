@@ -2,19 +2,23 @@
 
 const copyDir = require("./copyDir.js");
 const fs = require("fs");
+const getPackageJson = require("./package.js");
 const emoji = require("node-emoji");
+const childProcess = require("child_process");
+const jsonfile = require("jsonfile");
+
 /**
  * 新建项目初始化并复制模板
  * @param {String}  dir -  用户新建projectname
  * @param {Type}  Value -  Note
  */
-function initProject(projectName) {
+async function initProject(projectName) {
   const copySourcePath = `${__dirname}`;
-  let packageJson;
-
-  copyDir(`${copySourcePath}/project`, projectName, function(err) {
+  fs.mkdirSync(projectName);
+  await copyDir(`${copySourcePath}/project`, projectName, function(err) {
     if (err) console.log(err);
   });
+
   fs.readFile(`${copySourcePath}/projectPackage.json`, function(err, data) {
     if (err) throw err;
     packageJson = JSON.parse(data);

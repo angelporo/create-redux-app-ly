@@ -1,20 +1,16 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Route, Switch, withRouter, Link} from "react-router-dom";
-// import Home from "./home/home.js";
+import Home from "./home/home.js";
 function User() {
-  return <Link to="/feedback">this is user page!</Link>;
-}
-
-function Feedback() {
-  return <div>this is feedback page ! </div>;
+    return <Link style={{color: "red"}} to="/feedback">this is user page!</Link>;
 }
 
 export function Main(props) {
   return (
     <Switch>
+      <Route path="/feedback" component={Home} />
       <Route path="/" component={User} />
-      <Route path="/feedback" component={Feedback} />
     </Switch>
   );
 }
