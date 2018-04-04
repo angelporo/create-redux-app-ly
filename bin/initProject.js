@@ -56,12 +56,12 @@ async function initProject(projectName) {
 
             console.log(
               "\x1b[36m",
-              `base run : cd ${projectName} && npm start`,
+              `base run : cd ${projectName} && npm run start`,
             );
 
             console.log(
               "\x1b[36m",
-              `base run : cd ${projectName} && npm build`,
+              `base run : cd ${projectName} && npm run build`,
             );
             console.log("\x1b[36m", `base run : cd ${projectName} && npm test`);
             console.log("\x1b[36m", "start to work");

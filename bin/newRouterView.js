@@ -62,8 +62,8 @@ function newRouterView(pageName) {
             return console.log(
               "\x1b[33m",
               `
-                ${warning}  Create file already exists
-                `,
+                            ${warning}  Create file already exists
+                            `,
             );
           }
 
@@ -86,14 +86,29 @@ function newRouterView(pageName) {
             const tempalteComponentTestPath = getWriteName(pageName)(
               `${"index"}.js`,
             );
+            const templateComponentIndexJsString = indexTemplatejs(pageName);
             createDirAndWriteFile(tempalteComponentTestPath);
+            fs.writeFile(
+              tempalteComponentTestPath,
+              templateComponentIndexJsString,
+              function(err) {
+                if (err) {
+                  throw err;
+                } else {
+                  console.log(
+                    "\x1b[36m",
+                    `create ${tempalteComponentTestPath} success`,
+                  );
+                }
+              },
+            );
           }
 
           console.log(
             "\x1b[36m",
             `
-              create page to current dir  ${emojified}
-              `,
+                        create page to current dir  ${emojified}
+                        `,
           );
 
           /**

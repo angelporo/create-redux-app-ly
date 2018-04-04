@@ -5,11 +5,10 @@ import {createStore, combineReducers, applyMiddleware, compose} from "redux";
 import thunkMiddleware from "redux-thunk";
 import {routerMiddleware, routerReducer} from "react-router-redux";
 import home from "./router/home/update.js";
+import {composeWithDevTools} from "redux-devtools-extension";
 
-// const composeEnhancers =
-//   process.env.NODE_ENV === "development"
-//     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-//     : compose;
+const composeEnhancers =
+  process.env.NODE_ENV === "development" ? composeWithDevTools : compose;
 
 export const reducers = combineReducers({
   view: combineReducers({
@@ -25,7 +24,7 @@ export const reducers = combineReducers({
  */
 const middlewares = history =>
   applyMiddleware(thunkMiddleware, routerMiddleware(history));
-
-const store = history => createStore(reducers, compose(middlewares(history)));
+const store = history =>
+  createStore(reducers, composeEnhancers(middlewares(history)));
 
 export default store;

@@ -57,7 +57,7 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? "source-map" : false,
   // In production, we only want to load the polyfills and the app code.
-    entry: [require.resolve("./polyfills"), paths.appIndexJs],
+  entry: [require.resolve("./polyfills"), paths.appIndexJs],
   output: {
     // The build folder.
     path: paths.appBuild,
@@ -257,6 +257,10 @@ module.exports = {
         minifyCSS: true,
         minifyURLs: true,
       },
+    }),
+    // 代码分割
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "common", // Specify the common bundle's name.
     }),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.

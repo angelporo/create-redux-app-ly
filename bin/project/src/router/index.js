@@ -1,9 +1,14 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Route, Switch, withRouter, Link} from "react-router-dom";
-import Home from "./home/home.js";
+import Home from "./home/home";
+
 function User() {
-    return <Link style={{color: "red"}} to="/feedback">this is user page!</Link>;
+  return (
+    <Link style={{color: "red"}} to="/feedback">
+      this is user page!
+    </Link>
+  );
 }
 
 export function Main(props) {
@@ -14,11 +19,6 @@ export function Main(props) {
     </Switch>
   );
 }
-
-// const Home = {
-//   loader: () => import(/* webpackChunkName: "dashboard" */ "./home/home.js"),
-//   loading: () => null,
-// };
 
 function mapStateToProps(state) {
   return {

@@ -1,3 +1,7 @@
+function firstUpperCase(str) {
+  return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
+}
+
 const reducerJs = function(viewName) {
     const reducerName = viewName + "Reducer";
   return `
@@ -28,6 +32,7 @@ export default ${reducerName};
 };
 
 const viewJs = function(pageName) {
+    const ComponentName = firstUpperCase(pageName);
   return `
 /**
  * Create a dot.
@@ -36,8 +41,9 @@ const viewJs = function(pageName) {
  */
  import React from "react";
  import {connect} from "react-redux";
+ import Loadable from 'react-loadable';
 
- function ${pageName}() {
+    function ${ComponentName}() {
      return (
          <div>
              Tempalte page!
@@ -54,20 +60,44 @@ const viewJs = function(pageName) {
      return {};
  }
 
-export default connect(mapStateToProps, mapStateToDispatch)(${pageName});
+export default connect(mapStateToProps, mapStateToDispatch)(${ComponentName});
     `;
 };
 
 
 const  componentJs = function (pageName) {
+    const ComponentName = firstUpperCase(pageName);
+
     return `
-    pagename.js
+/**
+ * Create a dot.
+ * @param {Type}  Value -  Note
+ * @param {Type}  Value -  Note
+ */
+import React from "react";
+import "./${pageName}.css";
+
+export default function ${ComponentName}() {
+  return (
+    <div className="root">
+          page container
+    </div>
+  );
+}
     `
 }
 
 const ComponentIndexJs = function (pageName){
+    const ComponentName = firstUpperCase(pageName);
     return `
-    index.js
+/**
+ * 最后一层到处组建,主要用于组建公共类型一起构建
+ * @param {Type}  Value -  Note
+ * @param {Type}  Value -  Note
+ */
+import ${ComponentName} from "./${pageName}.js";
+
+export default ${ComponentName};
     `
 }
 

@@ -1,6 +1,9 @@
 ## `create-redux-app`
 
-基于`create-react-app` 构建开箱即用`redux` 单页面项目包
+## 介绍
+
+基于`create-react-app` 构建开箱即用`redux react-router4` 单页面项目包
+其中`build`时添加代码分割 `build`无缝项目`update`
 如果有自己的需求请自行修改`config/webpack.config.dev.js or webpack.config.prod.js`
 
 
@@ -13,7 +16,7 @@ create-redux-app-ly -n myapp
 cd myapp && npm start
 ```
 
-
+## CLI
 - init <projectName> 初始化项目
 - newpage <pageName> 新建页面到`src/router`中
 - newcomponent <componentName> 新建模块页面到`/component`中

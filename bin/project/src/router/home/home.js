@@ -12,7 +12,6 @@ function Home() {
 
 function mapStateToProps(state) {
   return {
-    author: "<940079461@qq.com>",
   };
 }
 

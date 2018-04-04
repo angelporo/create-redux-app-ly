@@ -4,8 +4,7 @@
 import * as ActionType from "./type";
 
 export const initdata = {
-  user: "",
-  age: "",
+    author: "940079461@qq.com"
 };
 
 function home(state = initdata, action) {
