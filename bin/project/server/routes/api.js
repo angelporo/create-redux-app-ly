@@ -9,7 +9,7 @@ router.use(function(req, res, next) {
   next();
 });
 
-router.post("/", function(req, res, next) {
+router.post("/", function(req, res) {
   console.log("api");
   res.json({});
 });

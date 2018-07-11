@@ -1,6 +1,8 @@
-## `create-redux-app`
+## `create-redux-app-ly`
 
 ## 介绍
+
+一键构建脚手架
 
 基于`create-react-app` 构建开箱即用`redux react-router4` 单页面项目包
 其中`build`时添加代码分割 `build`无缝项目`update`
@@ -58,7 +60,7 @@ cd myapp && npm start
 │   │   │   ├── header.test.js
 │   │   │   ├── index.js
 │   │   │   └── logo.svg
-│   │   └── template # 组件模板,用来new component,因为基本变化不大会写到cli已做参考
+│   │   └── template # 组件样本,用来new component,因为基本变化不大会写到cli已做参考
 │   │       ├── index.js
 │   │       ├── tempalte.css
 │   │       ├── tempalte.js
@@ -70,7 +72,7 @@ cd myapp && npm start
 │   │   │   ├── type.js
 │   │   │   └── update.js
 │   │   ├── index.js
-│   │   └── tempalte # new page 模板
+│   │   └── tempalte # new page 样板(仅供参考)
 │   │       ├── tempalte.js # 页面view
 │   │       ├── template.css # 页面样式
 │   │       ├── type.js # type

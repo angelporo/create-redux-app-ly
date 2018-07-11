@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const command = require("commander");
-const path = require("path");
 const newView = require("./newRouterView.js");
 const initProject = require("./initProject.js");
 const template = require("./template.js");

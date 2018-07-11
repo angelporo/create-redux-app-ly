@@ -4,7 +4,6 @@ const copyDir = require("./copyDir.js");
 const fs = require("fs");
 const emoji = require("node-emoji");
 const childProcess = require("child_process");
-const jsonfile = require("jsonfile");
 
 /**
  * 新建项目初始化并复制模板

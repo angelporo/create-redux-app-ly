@@ -1,6 +1,6 @@
 {
   "name": "create-redux-app-ly",
-  "version": "0.4.7",
+  "version": "0.4.9",
   "description": "基于create-react-app构建的redux开箱即用工具",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "commander": "^2.15.1",
-    "jsonfile": "^4.0.0",
     "node-emoji": "^1.8.1"
   }
 }
